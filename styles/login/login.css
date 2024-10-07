@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+/*variqables" pagina login*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: white;
+}
+
+.header {
+  text-align: left;
+  padding: 30px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.header img {
+  height: 80px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.login-box {
+  display: flex;
+  background-color: white;
+  box-shadow: 4px 4px 8px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.form-container {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.form-container .input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+.form-container .input-group i, .form-container .input-group svg {
+  position: absolute;
+  left: 10px;
+  top: 65%;
+  transform: translateY(-50%);
+  color: #666;
+}
+.form-container .input-group input {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  border: 1px solid white;
+  background-color: #F2F2F2;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.form-container .input-group input:focus {
+  border-color: #2D4F6F;
+  outline: none;
+}
+.form-container .login-btn {
+  padding: 10px;
+  background-color: #6589C4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.form-container .login-btn:hover {
+  background-color: #2D4F6F;
+}
+
+.image-container img {
+  height: 100%;
+  width: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=login.css.map */

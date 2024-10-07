@@ -1,0 +1,82 @@
+/* Variables de colores */
+/* Reset y estructura general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+}
+.header img {
+  width: 150px;
+}
+
+.usuaris_box {
+  display: flex;
+  width: 800px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.image_usuaris_box {
+  width: 350px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c73dd;
+}
+
+form {
+  margin-left: 10px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+form input, form select {
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  background-color: #eaeaea;
+  font-size: 16px;
+  width: 320px;
+}
+form input:focus, form select:focus {
+  outline: none;
+  border-color: #2c73dd;
+  background-color: #f7f7f7;
+}
+form button {
+  width: 70%;
+  padding: 10px;
+  margin-left: 50px;
+  background-color: #2c73dd;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+form button:hover {
+  background-color: #1e5cb8;
+}/*# sourceMappingURL=usuaris.css.map */
