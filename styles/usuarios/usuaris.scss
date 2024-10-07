@@ -1,6 +1,6 @@
 /* Variables de colores */
 $primary-color: #2c73dd;
-$secondary-color: #f0f0f0;
+$secondary-color: #faeded;
 $text-color: #333;
 $input-background: #eaeaea;
 
@@ -13,7 +13,7 @@ $input-background: #eaeaea;
 
 body {
     font-family: Arial, sans-serif;
-    background-color: $secondary-color;
+    background-color: white;
     color: $text-color;
 }
 
@@ -23,6 +23,7 @@ body {
     justify-content: space-between;
     padding: 20px;
     background-color: #fff;
+    border-bottom: 4px solid rgba(75, 74, 74, 0.1);
 
 img {
     width: 150px;
@@ -35,19 +36,14 @@ img {
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 .image_usuaris_box{
-    width:350px;
+    height: auto;
 }
 
-h1 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: $primary-color;
-}
+
 form {
     margin-left: 10px;
     padding: 40px;
@@ -57,16 +53,16 @@ form {
 input, select {
     margin:20px auto;
     padding: 10px;
-    border: 1px solid $input-background;
+    border: 1px solid #F2F2F2;
     border-radius: 5px;
-    background-color: $input-background;
+    background-color: #F2F2F2;
     font-size: 16px;
     width: 320px;
 
     &:focus {
         outline: none;
-        border-color: $primary-color;
-        background-color: lighten($input-background, 5%);
+        border-color: #F2F2F2;
+        background-color: lighten(#F2F2F2, 5%);
     }
     }
 
@@ -74,7 +70,7 @@ input, select {
     width: 70%;
     padding: 10px;
     margin-left: 50px;
-    background-color: $primary-color;
+    background-color:#6589C4;
     color: #fff;
     font-size: 16px;
     border: none;
@@ -82,7 +78,7 @@ input, select {
     cursor: pointer;
 
     &:hover {
-        background-color: darken($primary-color, 10%);
+        background-color: darken(#6589C4, 10%);
     }
     }
 }

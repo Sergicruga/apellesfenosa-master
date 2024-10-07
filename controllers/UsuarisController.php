@@ -8,7 +8,7 @@ class UsuarisController {
         $usuarioModel = new Usuario();
         $this->users = $usuarioModel->mostrarTodos(); // Asigna a $this->users
         // Mostrar todos los usuarios
-        include('views/usuarios/usuaris.php');
+        include('views/usuarios/crearUsuario.php');
     }
 
     public function formularioCrearUsuario(){
@@ -17,24 +17,28 @@ class UsuarisController {
 
     public function createUser() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                // Recibir los datos del formulario
+            // Verificar si se están enviando los valores correctos
+            if (!isset($_POST['name']) || !isset($_POST['roles']) || !isset($_POST['password'])) {
+                echo "Error: No se han enviado todos los campos requeridos";
+                return;
+            }
+    
             $nombre = $_POST['name'];
-            $rol = $_POST['rol'];
+            $rol = $_POST['roles'];
             $password = $_POST['password'];
-        
-                // Llamar al modelo para insertar el usuario en la base de datos
+    
+            // Llamar al modelo para insertar el usuario en la base de datos
             $usuarioModel = new Usuario();
-            if ($usuarioModel->insertar($nombre, $password, $rol )) {
-                    // Redirigir a la lista de usuarios si se inserta correctamente
+            if ($usuarioModel->insertar($nombre, $rol, $password)) {
+                // Redirigir a la lista de usuarios si se inserta correctamente
                 header('Location: index.php?controller=Usuaris&action=index');
                 exit(); // Asegúrate de salir para evitar que el script continúe
             } else {
-                    // Manejar el error aquí si es necesario
+                // Manejar el error aquí si es necesario
                 echo "Error al crear el usuario.";
             }
         }
         $this->index(); // Mostrar la vista en caso de que no sea un POST
-        
     }
 
     public function deleteUser() {

@@ -15,11 +15,10 @@ class Usuario extends Database {
         $stmt->bindParam(':id', $id);
         $stmt->execute();
     }
-    
-
-    function getApellidos() {
-        return $this->rol;
+    function setRol($rol) {
+        $this->rol = $rol;
     }
+    
     function getPassword() {
         return $this->password;
     }
@@ -40,15 +39,15 @@ class Usuario extends Database {
     
         // ...
     
-    function insertar($nombre, $password, $rol) {
-        $db = $this->conectar();
-        $sql = "INSERT INTO usuarios ('nombre_usuario', 'password', 'rol_usuario') VALUES (:nombre_usuario, :password, :rol_usuario)"; // Asegúrate de que el nombre de la tabla y los campos sean correctos
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(':nombre_usuario', $nombre);
-        $stmt->bindParam(':password',$hashedPassword);
-        $stmt->bindParam(':rol_usuario', $rol);
-        echo "Nombre: $nombre, Rol: $rol, Password: $password"; // Debugging
-            
+        function insertar($nombre, $rol, $password) {
+            $db = $this->conectar();
+            $sql = "INSERT INTO usuarios (nombre_usuario, rol_usuario, password) VALUES (:nombre_usuario, :rol_usuario, :password)";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':nombre_usuario', $nombre);       
+            $stmt->bindParam(':rol_usuario', $rol);
+            $stmt->bindParam(':password', $password);
+            echo "Nombre: $nombre, Rol: $rol, Password: $password"; // Debugging
+                    
             // Ejecuta la consulta
             try {
                 $stmt->execute(); // Ejecutar la inserción
@@ -59,7 +58,7 @@ class Usuario extends Database {
                 echo "Error al insertar el usuario: " . $e->getMessage();
                 return false; // Retornar falso si hubo un error
             }
-    }
+        }
     }
 
 
