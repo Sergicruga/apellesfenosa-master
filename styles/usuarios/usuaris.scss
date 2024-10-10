@@ -1,9 +1,5 @@
-/* Variables de colores */
-$primary-color: #2c73dd;
-$secondary-color: #faeded;
-$text-color: #333;
-$input-background: #eaeaea;
-
+@import "C:/xampp/htdocs/apellesfenosa/SCSS/_variables.scss";
+@import "C:/xampp/htdocs/apellesfenosa/SCSS/_mixins.scss";
 /* Reset y estructura general */
 * {
     margin: 0;
@@ -13,34 +9,27 @@ $input-background: #eaeaea;
 
 body {
     font-family: Arial, sans-serif;
-    background-color: white;
-    color: $text-color;
+    background-color:$header-bg;
+    color: black;
 }
 
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    background-color: #fff;
-    border-bottom: 4px solid rgba(75, 74, 74, 0.1);
+@include header;
+}
 
-img {
-    width: 150px;
-}
-}
 .usuaris_box {
     display: flex;
-    width: 800px;
+    width: 1000px;
     margin: 100px auto;
-    padding: 20px;
-    background-color: #fff;
+    background-color:$header-bg;
     border-radius: 10px;
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-.image_usuaris_box{
-    height: auto;
+.image_usuaris_box {
+    position: relative; // mantener la posición relativa
+    width: 900px;
+    border-radius: 10px !important;
 }
 
 
@@ -70,15 +59,15 @@ input, select {
     width: 70%;
     padding: 10px;
     margin-left: 50px;
-    background-color:#6589C4;
-    color: #fff;
+    background-color:$button-bg;
+    color:$header-bg;
     font-size: 16px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 
     &:hover {
-        background-color: darken(#6589C4, 10%);
+        background-color:$button_hv;
     }
     }
 }

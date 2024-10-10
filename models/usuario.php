@@ -8,13 +8,6 @@ class Usuario extends Database {
     function getNombre() {
         return $this->nombre;
     }
-    public function eliminar($id) {
-        $db = $this->conectar();
-        $sql = "DELETE FROM usuarios WHERE id = :id";  // Asegúrate de que 'id' es el nombre correcto del campo en tu tabla
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(':id', $id);
-        $stmt->execute();
-    }
     function setRol($rol) {
         $this->rol = $rol;
     }

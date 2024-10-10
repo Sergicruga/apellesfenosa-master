@@ -1,4 +1,4 @@
-/* Variables de colores */
+/*variqables" pagina login*/
 /* Reset y estructura general */
 * {
   margin: 0;
@@ -8,35 +8,34 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: white;
-  color: #333;
+  background-color: #FFFFFF;
+  color: black;
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: #fff;
-  border-bottom: 4px solid rgba(75, 74, 74, 0.1);
+  text-align: left;
+  padding: 30px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .header img {
-  width: 150px;
+  height: 80px;
 }
 
 .usuaris_box {
   display: flex;
-  width: 800px;
+  width: 1000px;
   margin: 100px auto;
-  padding: 20px;
-  background-color: #fff;
+  background-color: #FFFFFF;
   border-radius: 10px;
   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 .image_usuaris_box {
-  height: auto;
+  position: relative;
+  width: 900px;
+  border-radius: 10px !important;
 }
 
 form {
@@ -65,12 +64,12 @@ form button {
   padding: 10px;
   margin-left: 50px;
   background-color: #6589C4;
-  color: #fff;
+  color: #FFFFFF;
   font-size: 16px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 form button:hover {
-  background-color: #446eb2;
+  background-color: #2D4F6F;
 }/*# sourceMappingURL=usuaris.css.map */

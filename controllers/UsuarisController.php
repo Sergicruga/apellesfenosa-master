@@ -29,34 +29,22 @@ class UsuarisController {
             $existingUser  = $usuarioModel->getByUsername($nombre);
             if ($existingUser) {
                 // Si el usuario ya existe, vuelve a mostrar la vista con un mensaje de error
-                $errorMessage = "Error: El nombre de usuario ya existe."; // Mensaje de error
-                include('views/usuarios/crearUsuario.php'); // Muestra la vista con el error
+                $errorMessage = "Error: El nombre de usuario ya existe.";
+                include('views/usuarios/crearUsuario.php');
                 return;
             }
             // Llamar al modelo para insertar el usuario en la base de datos
             if ($usuarioModel->insertar($nombre, $rol, $hashedPassword)) {
                 // Redirigir a la lista de usuarios si se inserta correctamente
                 header('Location: index.php?controller=Usuaris&action=index');
-                exit(); // Asegúrate de salir para evitar que el script continúe
+                exit();
             } else {
-                // Manejar el error aquí si es necesario
                 echo "Error al crear el usuario.";
             }
         }
-        $this->index(); // Mostrar la vista en caso de que no sea un POST 
+        $this->index(); // Mostrar la vista en caso de que no sea un POST
     }
 
-    }
-    function deleteUser() {
-        $userId = $_GET['id'] ?? null;
-        if ($userId) {
-            // Llamar al modelo para eliminar el usuario de la base de datos
-            $usuarioModel = new Usuario();
-            $usuarioModel->eliminar($userId);
-        }
-        // Redirigir a la lista de usuarios después de la eliminación
-        header('Location: index.php?controller=Usuaris&action=index');
-        exit();
     }
     function checkUsername() {
         $username = $_GET['username'];
