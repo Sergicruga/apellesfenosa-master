@@ -19,14 +19,14 @@ else{
     $nombreController = "LoginController";
 }
 if (class_exists($nombreController)){
-    $controlador = new $nombreController(); 
+    $controlador = new $nombreController();
     if(isset($_GET['action'])){
         $action = $_GET['action'];
     }
     else{
         $action ="verLogin";
     }
-    $controlador->$action();   
+    $controlador->$action();
 }else{
 
     echo "No existe el controlador";
