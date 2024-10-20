@@ -8,7 +8,7 @@ function autocargar($nombreClase){
         $file = "$directory/$nombreClase.php";
 
          // Depuración: imprime las rutas que se están buscando
-         error_log("Buscando: $file");
+        error_log("Buscando: $file");
 
 
         if (file_exists($file)) {
